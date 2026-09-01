@@ -1,30 +1,38 @@
-<nav class="fixed top-0 left-0 bg-transparent" >
+<nav
+  class="fixed top-0 left-0 z-50 w-full"
+  [style.background-color]="isHome ? 'transparent' : '#004541'"
+>
   <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-
 
     <div class="flex items-center gap-8">
 
       <a
         routerLink="/"
-        routerLinkActive="text-[#D7CFB9]"
+        routerLinkActive="!text-[#D7CFB9] !border-[#D7CFB9] font-semibold"
         [routerLinkActiveOptions]="{ exact: true }"
-        class="font-medium !text-[#EBEBE9] transition hover:text-[#C3B77F]-600 !no-underline"
+        class="border-b-2 border-transparent pb-0.5 font-medium text-white/80 no-underline
+               transition-colors duration-200
+               hover:text-[#E8D48B] hover:border-[#E8D48B]"
       >
         Home
       </a>
 
       <a
         routerLink="/signup"
-        routerLinkActive="text-[#D7CFB9]"
-        class="font-medium !text-[#EBEBE9] transition hover:text-[#C3B77F]-600 !no-underline "
+        routerLinkActive="!text-[#D7CFB9] !border-[#D7CFB9] font-semibold"
+        class="border-b-2 border-transparent pb-0.5 font-medium text-white/80 no-underline
+               transition-colors duration-200
+               hover:text-[#E8D48B] hover:border-[#E8D48B]"
       >
         Sign Up
       </a>
 
       <a
         routerLink="/products"
-        routerLinkActive="text-[#D7CFB9]"
-        class="font-medium !text-[#EBEBE9] transition hover:text-[#C3B77F]-600 !no-underline "
+        routerLinkActive="!text-[#D7CFB9] !border-[#D7CFB9] font-semibold"
+        class="border-b-2 border-transparent pb-0.5 font-medium text-white/80 no-underline
+               transition-colors duration-200
+               hover:text-[#E8D48B] hover:border-[#E8D48B]"
       >
         Products
       </a>
