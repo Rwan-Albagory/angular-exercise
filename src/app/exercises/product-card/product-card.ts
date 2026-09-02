@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { CurrencyPipe } from '@angular/common';
 
 interface product{
   id: number;
@@ -10,7 +9,6 @@ interface product{
 }
 
 @Component({
-  imports: [ CurrencyPipe ],
   standalone: true,
   selector: 'app-product-card',
   templateUrl: './product-card.html',
