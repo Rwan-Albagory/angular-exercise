@@ -1,0 +1,25 @@
+export interface Product {
+    id: number;
+    title: string;
+    description: string;
+    price: number;
+    discountPercentage: number;
+    rating: number;
+    stock: number;
+    brand: string;
+    category: string;
+    thumbnail: string;
+    images: string[];
+    quantity: number; // Add quantity property
+}
+
+export interface productwithquantity extends Product{
+    quantity: number;
+}
+
+export interface ProductResponse {
+    products: Product[];
+    total: number;
+    skip: number;
+    limit: number;
+}

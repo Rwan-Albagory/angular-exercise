@@ -1,40 +1,44 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { ProductsService } from '../../core/core/services/products.service';
+import { productwithquantity} from '../../core/core/models/product.model';
 
-interface product{
-  id: number;
-  name: string;
-  price: number;
-  image: string;
-  description: string;
-}
 
 @Component({
   standalone: true,
   selector: 'app-product-card',
-  templateUrl: './product-card.html',
+  templateUrl: './products.html',
 })
-export class ProductCard {
-  product: product = {
-    id: 1,
-    name: 'Eternity Chain Bracelet ' ,
-    price: 50000,
-    image: 'https://eg.azzafahmy.com/cdn/shop/files/FBSG.24-001-01-2_2.jpg?v=1735046609&width=800' ,
-    description: '18kt Gold and Sterling Silver. Inscribed with "إنت عمري" - “You are my eternity”. Sizes: One Size - Shortest Length: 15.5 cm - Longest Length: 18 cm.' ,
-  };
+export class Products implements OnInit {
+  private productsService = inject(ProductsService);
+  products: productwithquantity[] = [];
+  loading = true;
+  error = '';
 
-  quantity = 0; 
+  ngOnInit(): void {
+    this.productsService.getProducts().subscribe({
+      next: (response) => {
+        this.products = response.products;
+        this.loading = false;
+      },
+      error: ( ) => {
+        this.error = 'Failed to load products.';
+        this.loading = false;
+      }
+    });
+  }
 
-  increase(): void {
-    if (this.quantity < 10) {
-      this.quantity++;
-      console.log('Quantity:', this.quantity);
+
+  increase(product: productwithquantity): void {
+    if (product.quantity < 10) {
+      product.quantity++;
+      console.log('Quantity:', this.products);
     }
   }
 
-  decrease(): void {
-    if (this.quantity > 0) {
-      this.quantity--;
-      console.log('Quantity:', this.quantity);
+  decrease(product: productwithquantity): void {
+    if (product.quantity > 0) {
+      product.quantity--;
+      console.log('Quantity:', this.products);
     }
   }
 
