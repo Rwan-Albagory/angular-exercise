@@ -4,23 +4,23 @@
         Products
     </h1>
 
-    @if (loading) {
+    @if (loading()) {
         <p class="text-xl text-white">
             Loading...
         </p>
     }
 
-    @if (error) {
+    @if (error()) {
         <p class="text-xl text-red-300">
-            {{ error }}
+            {{ error() }}
         </p>
     }
 
-    @if (!loading && !error) {
+    @if (!loading() && !error()) {
 
         <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 
-        @for (product of products; track product.id) {
+        @for (product of products(); track product.id) {
 
             <div class="overflow-hidden rounded-2xl bg-white shadow-lg">
 
@@ -65,15 +65,17 @@
                             +
                         </button>
                     </div>
+                    <button
+                        type="button"
+                        class="mt-5 w-full rounded-lg bg-[#004541] px-4 py-3 font-semibold text-white"
+                    >
+                        Add to Cart
+                    </button>
                 </div>            
             </div>
-            <button
-                type="button"
-                class="mt-5 w-full rounded-lg bg-[#004541] px-4 py-3 font-semibold text-white"
-                >
-                    Add to Cart
-            </button>
         }
+
+        </div>
     }
 
 </div>

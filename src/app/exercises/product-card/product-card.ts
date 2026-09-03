@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
 import { ProductsService } from '../../core/core/services/products.service';
 import { productwithquantity} from '../../core/core/models/product.model';
 
@@ -10,19 +10,25 @@ import { productwithquantity} from '../../core/core/models/product.model';
 })
 export class Products implements OnInit {
   private productsService = inject(ProductsService);
-  products: productwithquantity[] = [];
-  loading = true;
-  error = '';
+  products = signal<productwithquantity[]>([]);
+  loading = signal(true);
+  error = signal('');
 
   ngOnInit(): void {
     this.productsService.getProducts().subscribe({
       next: (response) => {
-        this.products = response.products;
-        this.loading = false;
+        this.products.set(
+          response.products.map((product) => ({
+            ...product,
+            quantity: product.quantity ?? 0,
+          }))
+        );
       },
       error: ( ) => {
-        this.error = 'Failed to load products.';
-        this.loading = false;
+        this.error.set('Failed to load products.');
+      },
+      complete : () => {
+        this.loading.set(false);
       }
     });
   }
@@ -31,14 +37,14 @@ export class Products implements OnInit {
   increase(product: productwithquantity): void {
     if (product.quantity < 10) {
       product.quantity++;
-      console.log('Quantity:', this.products);
+      this.products.update((items) => [...items]);
     }
   }
 
   decrease(product: productwithquantity): void {
     if (product.quantity > 0) {
       product.quantity--;
-      console.log('Quantity:', this.products);
+      this.products.update((items) => [...items]);
     }
   }
 

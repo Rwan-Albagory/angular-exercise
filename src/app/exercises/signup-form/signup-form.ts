@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms'; 
-import { email } from '@angular/forms/signals';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   imports: [FormsModule],

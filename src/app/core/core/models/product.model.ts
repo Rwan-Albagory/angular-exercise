@@ -13,7 +13,7 @@ export interface Product {
     quantity: number; // Add quantity property
 }
 
-export interface productwithquantity extends Product{
+export interface productwithquantity extends Product{  
     quantity: number;
 }
 
