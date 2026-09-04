@@ -1,4 +1,4 @@
-import { Injectable, signal } from "@angular/core";
+import { Injectable, computed, signal } from "@angular/core";
 
 
 
@@ -7,9 +7,17 @@ import { Injectable, signal } from "@angular/core";
 })
 
 export class CartService {
-    cartCount = signal(0);
+    private quantities = signal<Record<number, number>>({}); //{ 5: 3, 12: 1, 20: 7 }
 
-    addToCart( quantity: number): void {
-        this.cartCount.update((count) => count + quantity);
+    cartCount = computed(() =>
+        Object.values(this.quantities()).reduce((sum, quantity) => sum + quantity, 0)
+    );
+
+    getQuantity(productId: number): number {
+        return this.quantities()[productId] ?? 0;
+    }
+
+    setQuantity(productId: number, quantity: number): void {
+        this.quantities.update((map) => ({ ...map, [productId]: quantity }));
     }
 }

@@ -17,9 +17,7 @@ export class Products implements OnInit {
 
   private cartService = inject(CartService);
   addToCart(product: productwithquantity): void {
-    if (product.quantity > 0) {
-      this.cartService.addToCart(product.quantity);
-    }
+    this.cartService.setQuantity(product.id, product.quantity);
   }
 
   ngOnInit(): void {
@@ -28,7 +26,7 @@ export class Products implements OnInit {
         this.products.set(
           response.products.map((product) => ({
             ...product,
-            quantity: product.quantity ?? 0,
+            quantity: this.cartService.getQuantity(product.id),
           }))
         );
       },
