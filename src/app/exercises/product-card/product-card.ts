@@ -1,18 +1,26 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
 import { ProductsService } from '../../core/core/services/products.service';
 import { productwithquantity} from '../../core/core/models/product.model';
-
+import { CartService } from '../../core/core/services/cart.service';
 
 @Component({
   standalone: true,
   selector: 'app-product-card',
   templateUrl: './products.html',
 })
-export class Products implements OnInit {
+export class Products implements OnInit { 
+
   private productsService = inject(ProductsService);
   products = signal<productwithquantity[]>([]);
   loading = signal(true);
   error = signal('');
+
+  private cartService = inject(CartService);
+  addToCart(product: productwithquantity): void {
+    if (product.quantity > 0) {
+      this.cartService.addToCart(product.quantity);
+    }
+  }
 
   ngOnInit(): void {
     this.productsService.getProducts().subscribe({
