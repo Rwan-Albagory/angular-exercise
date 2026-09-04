@@ -1,3 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import 'tailwindcss';
+
+@theme {
+  --color-mocha: #3c2a21;
+  --color-mocha-deep: #2a1c14;
+  --color-mocha-soft: #5c4033;
+  --color-cream: #fcf8f5;
+  --color-beige: #f3e8d8;
+  --color-sand: #e8d5c0;
+  --color-gold: #c4a46a;
+  --color-gold-soft: #e8d5a3;
+  --color-ink: #2c1810;
+  --color-taupe: #6b5748;
+  --color-card: #fffcf8;
+  --font-display: 'Cormorant Garamond', ui-serif, Georgia, serif;
+  --font-arabic: 'Amiri', ui-serif, Georgia, serif;
+}
+
+@layer base {
+  html,
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    overflow-x: hidden;
+  }
+
+  img {
+    max-width: 100%;
+  }
+}
