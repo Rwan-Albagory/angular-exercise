@@ -10,10 +10,9 @@ export interface Product {
     category: string;
     thumbnail: string;
     images: string[];
-    quantity: number; // Add quantity property
 }
 
-export interface productwithquantity extends Product{  
+export interface ProductWithQuantity extends Product{  
     quantity: number;
 }
 

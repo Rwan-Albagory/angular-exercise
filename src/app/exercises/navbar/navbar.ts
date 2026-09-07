@@ -20,6 +20,7 @@ export class Navbar {
   private router = inject(Router);
   cartService = inject(CartService);
   menuOpen = signal(false);
+  cartOpen = signal(false);
 
   constructor() {
     this.router.events
@@ -33,5 +34,10 @@ export class Navbar {
 
   toggleMenu(): void {
     this.menuOpen.update((open) => !open);
+  }
+
+
+  toggleCart(): void {
+    this.cartOpen.update(value => !value);
   }
 }
