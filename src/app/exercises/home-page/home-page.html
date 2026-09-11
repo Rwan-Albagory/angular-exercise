@@ -1,43 +1,59 @@
-<div class="relative h-dvh w-full overflow-hidden bg-cream">
+<div class="relative h-[calc(100dvh-5rem)] mt-20 gap-[48px] w-full overflow-hidden bg-floral-white ">
 
     <!-- Desktop -->
-    <img
-      src="/images/cover2.jpg"
-      alt="RUNAQ jewelry cover"
-      class="hidden h-full w-full object-cover md:block"
-    />
+    <div class=" hidden flex  justify-between items-center overflow-hidden bg-raisin-black p-[80px] gap-[48px] h-[calc(100dvh-5rem)] md:block">
+      <div class=" w-[560px] h-[381px] mb-9 hidden md:block">
+        <span class="text-light-brown text-[14px] py-1">Limited Time Offer</span>
+        <p class="text-floral-white text-[72px]">End of Season Sale - Up to 50% Off</p>
+        <p class="text-reliable-white text-[18px]">Limited time only - premium gold & diamond pieces at unbeatable prices. Secure the finest legacy jewelry before the collection sells out.</p>
+        <button
+          routerLink="/products"
+          class="w-[169px] h-[56px] bg-light-brown mt-9 rounded-full hover:cursor-pointer"
+          >
+          SHOP NOW
+        </button>
+      </div>
+      <img
+        src="/images/hero.png"
+        alt="RUNAQ jewelry cover"
+        class="hidden h-[690px] w-[768px] object-cover p-[50px] md:block"
+      />
+    </div>
   
     <!-- Mobile -->
     <img
-      src="/images/cover2-mobile.jpg"
+      src="/images/hero.png"
       alt="RUNAQ jewelry cover"
-      class="block h-full w-full object-cover md:hidden"
+      class="block relative h-full w-full object-cover md:hidden"
     />
-
-    <!-- <button
-    type="button"
-      routerLink="/products"
-      class="absolute
-
-              sm:bottom-75 sm:right-5
-              md:bottom-30 md:right-26
-
-              -translate-x-1/2 rounded-full
-              bg-mocha px-6 py-3 text-lg font-semibold text-white transition-colors duration-200 
-              hover:bg-transparent hover:text-mocha hover:border hover:cursor-pointer ">
-      Shop the collection
-    </button> -->
-  
+    
+    <div class="absolute inset-0 bg-raisin-black/70 block md:hidden "></div>
+      <!-- <div class="absolute inset-0 w-[100px] h-[100px] mb-9 z-10 text-center left-40 top-50">
+        <span class="text-light-brown text-[10px]">Limited Time Offer</span>
+        <p class="text-floral-white text-[20px] mb-4">End of Season Sale - Up to 50% Off</p>
+        <p class="text-reliable-white text-[10px]">Limited time only - premium gold & diamond pieces at unbeatable prices. Secure the finest legacy jewelry before the collection sells out.</p>
+        <a
+          routerLink="/products"
+          class="w-[87px] h-[56px] bg-light-brown text-[13px] rounded-full hover:cursor-pointer flex flex-wrap  "
+          >
+          SHOP NOW
+        </a>
+      </div> -->
   </div>
 
-<!-- <div 
+<div 
   class="strip
-          flex justify-center gap-30 text-mocha font-semibold text-50 p-4">
-  <span>HANDCRAFTED</span>
-  <span>ETHICALLY SOURCED</span>
-  <span>LIFETIME CARE</span>
-  <span>MADE TO ORDER</span>
-</div> -->
+          flex justify-center gap-3 lg:gap-[50px] text-brown-grey font-semibold text-[12px] px-[32px] py-[18px] ">
+          <span>
+            • INSURED SHIPPING 
+          </span>
+          <span>
+            •  30-DAY RETURNS  
+          </span>
+          <span>
+            •  AUTHENTICITY CERTIFICATE
+          </span>
+</div>
 
 <!-- <section class="flex small:flex-col-reverse md:flex-row">
 
