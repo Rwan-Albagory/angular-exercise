@@ -16,8 +16,6 @@ export class ProductsService {
     }
 
     getProductById(id: number): Observable<Product> {
-        return this.http.get<Product>(
-        `https://dummyjson.com/products/category/womens-jewellery/${id}`
-        );
+        return this.http.get<Product>(`https://dummyjson.com/products/${id}`);
     }
 }
