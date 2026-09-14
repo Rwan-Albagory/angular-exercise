@@ -4,11 +4,13 @@ import { SignupForm } from './exercises/signup-form/signup-form';
 import { Navbar } from './exercises/navbar/navbar';
 import {HomePage} from './exercises/home-page/home-page';
 import { ProductDetails } from './exercises/product-details/product-details';
+import { Cart } from './exercises/cart/cart';
 
 export const routes: Routes = [
     {path: '', component: HomePage},
     {path: 'navbar', component: Navbar},
     {path: 'products', component: Products},
     {path: 'products/:id', component: ProductDetails},
-    {path: 'signup', component: SignupForm}
+    {path: 'signup', component: SignupForm},
+    {path: 'cart', component: Cart}
 ];
