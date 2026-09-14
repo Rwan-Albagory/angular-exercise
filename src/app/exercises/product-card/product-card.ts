@@ -2,11 +2,13 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { ProductsService } from '../../core/core/services/products.service';
 import { ProductWithQuantity} from '../../core/core/models/product.model';
 import { CartService } from '../../core/core/services/cart.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   standalone: true,
   selector: 'app-product-card',
-  templateUrl: './products.html',
+  templateUrl: 'products.html',
+  imports: [RouterLink],
 })
 export class Products implements OnInit { 
 

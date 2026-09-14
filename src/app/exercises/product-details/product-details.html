@@ -1,0 +1,36 @@
+@if (product) {
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+  
+      <div>
+        <img
+          [src]="product.thumbnail"
+          [alt]="product.title"
+          class="w-full rounded-2xl"
+        />
+      </div>
+  
+      <div>
+        <h1 class="text-3xl font-bold text-mocha">
+          {{ product.title }}
+        </h1>
+  
+        <p class="mt-4 text-gray-600">
+          {{ product.description }}
+        </p>
+  
+        <p class="mt-6 text-2xl font-bold">
+          EGP {{ product.price }}
+        </p>
+  
+        <p class="mt-4">
+          Rating: {{ product.rating }}
+        </p>
+  
+        <p class="mt-2">
+          Brand: {{ product.images }}
+        </p>
+  
+      </div>
+  
+    </div>
+  }
