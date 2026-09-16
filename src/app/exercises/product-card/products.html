@@ -55,7 +55,7 @@
     
                             <button
                                 type="button"
-                                (click)="decrease(product)"
+                                (click)="decrease(product); $event.preventDefault(); $event.stopPropagation()"
                                 [disabled]="product.quantity === 0"
                                 class="flex h-8 w-8 items-center justify-center rounded-lg bg-beige text-xl font-bold text-mocha transition-colors duration-200 hover:bg-sand disabled:opacity-40 hover:cursor-pointer  "
                             >
@@ -66,7 +66,7 @@
                             </span>
                             <button
                                 type="button"
-                                (click)="increase(product)"
+                                (click)="increase(product); $event.preventDefault(); $event.stopPropagation()"
                                 [disabled]="product.quantity === 10"
                                 class="flex h-8 w-8 items-center justify-center rounded-lg bg-mocha text-xl font-bold text-cream transition-colors duration-200 hover:bg-mocha-soft disabled:opacity-40 hover:cursor-pointer active:bg-mocha-deep    "
                             >
@@ -75,7 +75,7 @@
                         </div>
                         <button
                             type="button"
-                            (click)="addToCart(product)"
+                            (click)="addToCart(product); $event.preventDefault(); $event.stopPropagation()"
                             class="mt-5 w-full rounded-lg bg-mocha px-4 py-3 font-semibold text-cream transition-colors duration-200 hover:cursor-pointer hover:bg-mocha-soft active:bg-mocha-deep "
                         >
                             Add to Cart
