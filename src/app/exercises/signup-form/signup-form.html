@@ -13,27 +13,39 @@
       Fill in your information below
     </p>
 
-    <form>
+    <form
+     [formGroup]="signupForm"
+     (ngSubmit)="submit()"
+     >
 
       <div class="mb-3">
         <label
-          for="name"
+          for="fullName"
           class="mb-2 block text-sm font-semibold text-ink"
         >
-          Name
+          User name
         </label>
 
         <input
           id="name"
           type="text"
+          appBlockSpecialChars
           name="name"
-          [(ngModel)]="user.name"
+          formControlName="fullName"
           placeholder="Enter your name"
           class="w-full rounded-lg border-2 border-sand bg-beige px-4 py-3
                  text-ink placeholder:text-taupe
                  outline-none transition
                  focus:border-mocha focus:bg-card focus:ring-2 focus:ring-gold/40"
         />
+        @if (
+          signupForm.controls.fullName.touched &&
+          signupForm.controls.fullName.hasError('required')
+        ) {
+          <p class="mt-2 text-sm text-red-600">
+            Full name is required
+          </p>
+        }
       </div>
 
       <div class="mb-3">
@@ -47,14 +59,32 @@
         <input
           id="email"
           type="email"
+          appBlockSpecialChars
+          [blockedCharts]="[ '&', '$', '*',  '#', '!', '%', ' ', '.', '-', '_', '/']"
           name="email"
-          [(ngModel)]="user.email"
+          formControlName="email"
           placeholder="Enter your email"
           class="w-full rounded-lg border-2 border-sand bg-beige px-4 py-3
                  text-ink placeholder:text-taupe
                  outline-none transition
                  focus:border-mocha focus:bg-card focus:ring-2 focus:ring-gold/40"
         />
+        @if (
+          signupForm.controls.email.touched &&
+          signupForm.controls.email.hasError('required')
+        ) {
+          <p class="mt-2 text-sm text-red-600">
+            Email is required
+          </p>
+        }
+        @else if (
+          signupForm.controls.email.touched &&
+          signupForm.controls.email.hasError('email')
+        ) {
+          <p class="mt-2 text-sm text-red-600">
+            Please enter a valid email address.
+          </p>
+        }
       </div>
 
       <div class="mb-3">
@@ -68,48 +98,86 @@
         <input
           id="password"
           type="password"
+          appBlockSpecialChars
+          [blockedCharts]="[' ', '.']"
           name="password"
-          [(ngModel)]="user.password"
+          formControlName="password"
           placeholder="Enter your password"
           class="w-full rounded-lg border-2 border-sand bg-beige px-4 py-3
                  text-ink placeholder:text-taupe
                  outline-none transition
                  focus:border-mocha focus:bg-card focus:ring-2 focus:ring-gold/40"
         />
+           @if (
+            signupForm.controls.password.touched &&
+            signupForm.controls.password.hasError('required')
+          ) {
+            <p class="mt-2 text-sm text-red-600">
+              Password is required.
+            </p>
+          }
+  
+          @else if (
+            signupForm.controls.password.touched &&
+            signupForm.controls.password.hasError('minlength')
+          ) {
+            <p class="mt-2 text-sm text-red-600">
+              Password must be at least 6 characters.
+            </p>
+          }
       </div>
 
       <div class="mb-5">
         <label
-          for="age"
-          class="mb-2 block text-sm font-semibold text-ink"
-        >
-          Age
-        </label>
+        for="confirmPassword"
+        class="mb-2 block font-semibold text-mocha"
+      >
+        Confirm Password
+      </label>
 
-        <input
-          id="age"
-          type="number"
-          name="age"
-          [(ngModel)]="user.age"
-          placeholder="Enter your age"
-          class="w-full rounded-lg border-2 border-sand bg-beige px-4 py-3
-                 text-ink placeholder:text-taupe
-                 outline-none transition
-                 focus:border-mocha focus:bg-card focus:ring-2 focus:ring-gold/40"
-        />
+      <input
+        id="confirmPassword"
+        type="password"
+        formControlName="confirmPassword"
+        placeholder="Confirm your password"
+        class="w-full rounded-lg border border-gray-300 px-4 py-3 outline-none focus:border-mocha"
+      />
+
+      @if (
+        signupForm.controls.confirmPassword.touched &&
+        signupForm.controls.confirmPassword.hasError('required')
+      ) {
+        <p class="mt-2 text-sm text-red-600">
+          Confirm password is required.
+        </p>
+      }
+
+      @else if (
+        signupForm.controls.confirmPassword.touched &&
+        signupForm.controls.confirmPassword.value !==
+        signupForm.controls.password.value
+      ) {
+        <p class="mt-2 text-sm text-red-600">
+          Passwords do not match.
+        </p>
+      }
       </div>
 
-      <button
-        type="button"
-        [disabled]="!canSignUp"
-        class="w-full rounded-lg bg-mocha px-4 py-3
-                font-semibold text-cream transition-colors duration-200
-                hover:bg-mocha-soft
-                focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-cream
-                disabled:cursor-not-allowed disabled:bg-sand disabled:text-taupe"
-      >
-        Create Account
-      </button>
+      <a
+      routerLink="/cart">
+        <button
+          type="submit"
+          [disabled]="signupForm.invalid"
+          class="w-full rounded-lg bg-mocha px-4 py-3
+                  font-semibold text-cream transition-colors duration-200
+                  hover:bg-mocha-soft
+                  focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-cream
+                  disabled:cursor-not-allowed disabled:bg-sand disabled:text-taupe"
+        >
+          Create Account
+        </button>
+      </a>
+
 
     </form>
 
@@ -119,22 +187,22 @@
 
         <p>
           <span class="font-semibold text-mocha">Name : </span>
-          {{ user.name || 'Not entered yet' }}
+          {{ signupForm.controls.fullName.value || 'Not entered yet' }}
         </p>
 
         <p>
           <span class="font-semibold text-mocha">Email : </span>
-          {{ user.email || 'Not entered yet' }}
+          {{ signupForm.controls.email.value || 'Not entered yet' }}
         </p>
 
         <p>
           <span class="font-semibold text-mocha">Password : </span>
-          {{ user.password || 'Not entered yet' }}
+          {{ signupForm.controls.password.value || 'Not entered yet' }}
         </p>
 
         <p>
-          <span class="font-semibold text-mocha">Age : </span>
-          {{ user.age || 'Not entered yet' }}
+          <span class="font-semibold text-mocha">Confirm Password : </span>
+          {{ signupForm.controls.confirmPassword.value || 'Not entered yet' }}
         </p>
 
       </div>
