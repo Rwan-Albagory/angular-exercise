@@ -47,7 +47,7 @@
                 </h2>
   
                 <p class="mt-2 text-lg font-semibold text-mocha-soft">
-                  EGP {{ product.price }}
+                  EGP {{ product.price | number:'1.2-2'}}
                 </p>
   
                 <!-- Quantity Controls -->
@@ -100,7 +100,7 @@
                 </p>
   
                 <p class="mt-1 text-xl font-bold text-mocha">
-                  EGP {{ product.price * product.quantity }}
+                  EGP {{ product.price * product.quantity | number:'1.2-2' }}
                 </p>
               </div>
   
@@ -121,7 +121,7 @@
             </span>
   
             <span class="font-semibold text-mocha">
-              EGP {{ getSubtotal() }}
+              EGP {{ getSubtotal() | number:'1.2-2' }}
             </span>
           </div>
   
@@ -133,7 +133,7 @@
             </span>
   
             <span class="font-semibold text-green-700">
-              - EGP {{ getDiscount() }}
+              - EGP {{ getDiscount() | number:'1.2-2'}}
             </span>
           </div>
   
@@ -146,7 +146,7 @@
             </span>
   
             <span class="text-xl font-bold text-mocha">
-              EGP {{ getNetTotal() }}
+              EGP {{ getNetTotal() | number:'1.2-2' }}
             </span>
   
           </div>

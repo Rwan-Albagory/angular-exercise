@@ -2,10 +2,11 @@ import { RouterLink } from '@angular/router';
 import { Component, inject } from '@angular/core';
 import { CartService } from '../../core/core/services/cart.service';
 import { ProductWithQuantity } from '../../core/core/models/product.model';
+import { DecimalPipe } from '@angular/common';
 
 @Component({
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, DecimalPipe],
   selector: 'app-cart',
   templateUrl: './cart.html',
 })

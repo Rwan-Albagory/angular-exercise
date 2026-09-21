@@ -6,12 +6,13 @@ import {
   RouterLinkActive
 } from '@angular/router';
 import { filter } from 'rxjs';
+import { DecimalPipe } from '@angular/common';
 
 import { CartService } from '../../core/core/services/cart.service';
 
 @Component({
   standalone: true,
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, DecimalPipe],
   selector: 'app-navbar',
   templateUrl: './navbar.html',
 })

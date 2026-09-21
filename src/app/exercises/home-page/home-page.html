@@ -1,83 +1,290 @@
-<div class="relative h-[calc(100dvh-5rem)] mt-20 gap-12 w-full overflow-hidden bg-floral-white ">
+<main class="w-full overflow-hidden bg-[#1B100C] font-sans">
 
-    <!-- Desktop -->
-    <div class=" hidden md:flex justify-between items-center overflow-hidden bg-raisin-black p-20 gap-12 h-[calc(100dvh-5rem)] md:block">
-      <div class=" w-140 h-95.25 mb-9 hidden md:block">
-        <span class="text-light-brown text-[14px] py-1">Limited Time Offer</span>
-        <p class="text-floral-white text-[72px]">End of Season Sale - Up to 50% Off</p>
-        <p class="text-reliable-white text-[18px]">Limited time only - premium gold & diamond pieces at unbeatable prices. Secure the finest legacy jewelry before the collection sells out.</p>
-        <button
-          routerLink="/products"
-          class="w-42.25 h-14 bg-light-brown mt-9 rounded-full hover:cursor-pointer"
+  <!-- 1. HERO -->
+  <section class="relative bg-[#1B100C] px-6 pt-28 pb-16 md:px-12 lg:px-20 lg:pt-36 lg:pb-24">
+    <div class="mx-auto flex max-w-7xl flex-col items-center gap-10 lg:flex-row lg:items-center lg:gap-16">
+
+      <!-- Text -->
+      <div class="w-full text-center lg:w-1/2 lg:text-left">
+        <h1 class="font-[Georgia,serif] text-[64px] leading-none text-[#E9D9BA] sm:text-[80px] lg:text-[96px]" dir="rtl">
+          رونق
+        </h1>
+        <p class="mt-4 font-[Georgia,serif] text-2xl text-[#E9D9BA] sm:text-3xl lg:text-4xl">
+          Fine jewelry, lit from within.
+        </p>
+        <p class="mx-auto mt-4 max-w-md text-sm leading-relaxed text-[#BBA98A] lg:mx-0">
+          End of season: up to 50% off gold and diamond pieces.
+          Choose yours before the collection sells out.
+        </p>
+
+        <div class="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start">
+          <a
+            routerLink="/products"
+            class="inline-flex items-center gap-2 rounded-full bg-[#C9A15B] px-7 py-3 text-sm font-semibold text-[#1B100C] transition-colors duration-200 hover:bg-[#D0A85C]"
           >
-          SHOP NOW
-        </button>
+            Shop the sale
+            <span dir="rtl" class="font-normal">تسوّقي الآن</span>
+          </a>
+          <a
+            class="inline-flex items-center gap-2 rounded-full border border-[#C9A15B]/60 px-7 py-3 text-sm font-semibold text-[#E9D9BA] transition-colors duration-200 hover:border-[#C9A15B] hover:text-[#C9A15B]"
+          >
+            View collections
+          </a>
+        </div>
       </div>
-      <img
-        src="/images/hero.png"
-        alt="RUNAQ jewelry cover"
-        class="hidden h-full w-[50%] object-cover  md:block rounded-2xl"
-      />
+
+      <div class="relative w-full max-w-sm lg:w-1/2 lg:max-w-md">
+        <div class="absolute -inset-3 rounded-t-[160px] rounded-b-2xl border border-[#C9A15B]/40"></div>
+        <img
+          src="/images/hero.png"
+          alt="Woman wearing RUNAQ layered gold jewelry"
+          class="relative h-[420px] w-full rounded-t-[160px] rounded-b-2xl object-cover sm:h-[500px] lg:h-[560px]"
+        />
+      </div>
     </div>
-    <!-- Mobile -->
-    <img
-      src="/images/hero.png"
-      alt="RUNAQ jewelry cover"
-      class="block relative h-full w-full object-cover  md:hidden"
-    />
-    
-    <div class="absolute inset-0 bg-raisin-black/70 block md:hidden "></div>
-      <!-- <div class="absolute inset-0 w-[100px] h-[100px] mb-9 z-10 text-center left-40 top-50">
-        <span class="text-light-brown text-[10px]">Limited Time Offer</span>
-        <p class="text-floral-white text-[20px] mb-4">End of Season Sale - Up to 50% Off</p>
-        <p class="text-reliable-white text-[10px]">Limited time only - premium gold & diamond pieces at unbeatable prices. Secure the finest legacy jewelry before the collection sells out.</p>
+  </section>
+
+  <section class="border-y border-[#C9A15B]/25 bg-[#1B100C]">
+    <div class="mx-auto grid max-w-7xl grid-cols-1 divide-y divide-[#C9A15B]/20 sm:grid-cols-3 sm:divide-y-0 sm:divide-x">
+      @for (benefit of benefits; track benefit.en) {
+        <div class="flex flex-col items-center justify-center gap-1 px-6 py-5 text-center">
+          <span class="text-sm font-medium text-[#E9D9BA]">{{ benefit.en }}</span>
+          <span dir="rtl" class="text-xs text-[#BBA98A]">{{ benefit.ar }}</span>
+        </div>
+      }
+    </div>
+  </section>
+  
+  <section class="bg-[#1B100C] px-6 py-16 md:px-12 lg:px-20">
+    <div class="mx-auto max-w-7xl">
+      <div class="mb-10 flex items-center justify-between">
+        <h2 class="font-[Georgia,serif] text-3xl text-[#E9D9BA] sm:text-4xl">Shop by piece</h2>
+        <span dir="rtl" class="hidden text-lg text-[#C9A15B] sm:block">تسوّقي حسب القطعة</span>
+      </div>
+      <div class="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
+        @for (category of categories; track category.en) {
+          <div
+            class="flex h-64 flex-col items-center justify-end gap-2 rounded-t-full rounded-b-2xl border border-[#C9A15B]/25 px-4 pb-6 pt-16 text-center sm:h-80 lg:h-88"
+            [style.background-color]="category.bg"
+          >
+            <span class="text-[#C9A15B]">
+              @switch (category.icon) {
+                @case ('necklace') {
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="h-8 w-8">
+                    <path d="M4 4c0 5 3.5 9 8 9s8-4 8-9" stroke-linecap="round" />
+                    <circle cx="12" cy="16" r="2.2" />
+                  </svg>
+                }
+                @case ('earring') {
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="h-8 w-8">
+                    <circle cx="12" cy="6" r="2" />
+                    <path d="M12 8v3a4 4 0 0 0 4 4" stroke-linecap="round" />
+                    <circle cx="16" cy="17" r="2" />
+                  </svg>
+                }
+                @case ('ring') {
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="h-8 w-8">
+                    <circle cx="12" cy="14" r="6" />
+                    <path d="m9 8 3-4 3 4-3 3-3-3Z" />
+                  </svg>
+                }
+                @case ('bracelet') {
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="h-8 w-8">
+                    <ellipse cx="12" cy="12" rx="8" ry="5" />
+                  </svg>
+                }
+              }
+            </span>
+            <span dir="rtl" class="mt-2 text-lg text-[#E9D9BA]">{{ category.ar }}</span>
+            <span class="text-sm text-[#E9D9BA]">{{ category.en }}</span>
+            <span class="text-xs text-[#BBA98A]">{{ category.count }} pieces</span>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+  <section class="bg-[#5B2022] px-6 py-16 md:px-12 lg:px-20">
+    <div class="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
+
+      <!-- Left -->
+      <div class="text-center lg:text-left">
+        <p class="font-[Georgia,serif] text-8xl leading-none text-[#E9D9BA] sm:text-9xl">50%</p>
+        <p dir="rtl" class="mt-4 text-xl text-[#D0A85C]">تخفيضات نهاية الموسم</p>
+        <p class="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-[#E9D9BA]/80 lg:mx-0">
+          End of season sale. Up to 50% off
+          while the collection lasts.
+        </p>
         <a
           routerLink="/products"
-          class="w-[87px] h-[56px] bg-light-brown text-[13px] rounded-full hover:cursor-pointer flex flex-wrap  "
-          >
-          SHOP NOW
+          class="mt-7 inline-block rounded-full bg-[#C9A15B] px-7 py-3 text-sm font-semibold text-[#1B100C] transition-colors duration-200 hover:bg-[#D0A85C]"
+        >
+          See all sale pieces
         </a>
-      </div> -->
-  </div>
+      </div>
 
-<div 
-  class="strip
-          flex justify-center gap-15 md:gap-12.5 text-brown-grey font-semibold text-[12px] px-8 py-4.5 ">
-          <span>
-            • INSURED SHIPPING 
-          </span>
-          <span>
-            •  30-DAY RETURNS  
-          </span>
-          <span>
-            •  AUTHENTICITY CERTIFICATE
-          </span>
-</div>
+      <!-- Right -->
+      <div>
+        <h3 class="mb-4 font-[Georgia,serif] text-2xl text-[#E9D9BA]">Chosen from the sale</h3>
+        <div class="divide-y divide-[#E9D9BA]/15 border-t border-[#E9D9BA]/15">
+          @for (product of saleProducts; track product.name) {
+            <div class="flex items-center justify-between gap-4 py-4">
+              <div class="flex items-center gap-3">
+                <span class="text-[#C9A15B]">
+                  @switch (product.icon) {
+                    @case ('necklace') {
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="h-6 w-6">
+                        <path d="M4 4c0 5 3.5 9 8 9s8-4 8-9" stroke-linecap="round" />
+                        <circle cx="12" cy="16" r="2.2" />
+                      </svg>
+                    }
+                    @case ('earring') {
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="h-6 w-6">
+                        <circle cx="12" cy="6" r="2" />
+                        <path d="M12 8v3a4 4 0 0 0 4 4" stroke-linecap="round" />
+                        <circle cx="16" cy="17" r="2" />
+                      </svg>
+                    }
+                    @case ('ring') {
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="h-6 w-6">
+                        <circle cx="12" cy="14" r="6" />
+                        <path d="m9 8 3-4 3 4-3 3-3-3Z" />
+                      </svg>
+                    }
+                    @case ('bracelet') {
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="h-6 w-6">
+                        <ellipse cx="12" cy="12" rx="8" ry="5" />
+                      </svg>
+                    }
+                  }
+                </span>
+                <div>
+                  <p class="text-sm font-medium text-[#E9D9BA]">{{ product.name }}</p>
+                  <p class="text-xs text-[#E9D9BA]/60">{{ product.description }}</p>
+                </div>
+              </div>
+              <div class="text-right">
+                @if (product.oldPrice) {
+                  <p class="text-xs text-[#E9D9BA]/40 line-through">EGP {{ product.oldPrice }}</p>
+                }
+                <p class="text-sm font-semibold text-[#D0A85C]">EGP {{ product.price }}</p>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="bg-[#E9D9BA] px-6 py-16 md:px-12 lg:px-20">
+    <div class="mx-auto flex max-w-7xl flex-col items-center gap-12 lg:flex-row lg:gap-100">
 
-<section class="flex small:flex-col-reverse lg:flex-row md:flex-col-reverse">
+      <div class="w-full max-w-sm lg:w-1/2">
+        <img
+          src="/images/story.png"
+          alt="Layered gold necklaces on model"
+          class="h-[380px] w-full rounded-t-[140px] rounded-b-2xl border border-[#C9A15B]/40 object-cover sm:h-[440px]"
+        />
+      </div>
 
-  <div class="h-100 w-200 ">
-    <img
-      src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1200&auto=format&fit=crop"
-      alt="RUNAQ jewelry"
-      class="h-full w-full object-cover">
-  </div>
+      <div class="w-full text-center lg:w-1/2 lg:text-left">
+        <h2 dir="rtl" class="font-[Georgia,serif] text-3xl leading-tight text-[#241711] sm:text-4xl lg:ml-62">
+          لكل قطعة حكاية،<br />
+          ولكل حكاية بريق
+        </h2>
+        <p class="mx-auto mt-5 max-w-md text-sm leading-relaxed text-[#241711]/80 lg:mx-0">
+          Every piece is checked by hand before it
+          reaches you, so what you wear is as good as
+          what you saw.
+        </p>
+        <a class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#241711] underline underline-offset-4">
+          Read our story
+          اقرأي حكايتنا
+        </a>
+      </div>
+    </div>
+  </section>
 
-  <div
-    class="p-10 mt-10 ">
+  <section class="bg-[#3D4322] px-6 py-14 md:px-12 lg:px-20">
+    <div class="mx-auto flex max-w-7xl flex-col items-center gap-6 lg:flex-row lg:items-center lg:justify-between">
 
-    <div class="mb-10">OUR CRAFT</div>
+      <div class="text-center lg:text-left">
+        <h2 class="font-[Georgia,serif] text-2xl text-[#E9D9BA] sm:text-3xl">Be the first to see new pieces</h2>
+        <p dir="rtl" class="mt-1 text-sm text-[#BBA98A]">كوني أول من يرى الجديد</p>
+      </div>
 
-    <h2 class="text-3xl text-50 font-bold text-mocha mb-8 sm:text-s">
-      Every strand of pearl
-      <br>
-      carries a story
-    </h2>
-    <p class="w-100 text-s">
-      We believe a true jewel is never rushed. Our artisans spend weeks shaping each piece, from selecting the stone to the final polish.
-    </p>
+      <form
+        class="flex w-full max-w-md flex-col gap-3 rounded-full border border-[#C9A15B]/30 bg-[#1B100C]/40 p-1.5 sm:flex-row"
+        (ngSubmit)="subscribe()"
+      >
+        <input
+          type="email"
+          name="email"
+          [ngModel]="email()"
+          (ngModelChange)="email.set($event)"
+          placeholder="Your email address"
+          class="w-full rounded-full bg-transparent px-5 py-2.5 text-sm text-[#E9D9BA] placeholder:text-[#BBA98A] focus:outline-none"
+        />
+        <button
+          type="submit"
+          class="shrink-0 rounded-full bg-[#C9A15B] px-6 py-2.5 text-sm font-semibold text-[#1B100C] transition-colors duration-200 hover:bg-[#D0A85C] "
+        >
+          Subscribe
+        </button>
+      </form>
+    </div>
+  </section>
 
+  <footer class="bg-[#1B100C] px-6 pt-14 pb-8 md:px-12 lg:px-20">
+    <div class="mx-auto grid max-w-7xl grid-cols-2 gap-8 sm:grid-cols-4">
 
-  </div>
+      <div class="col-span-2 sm:col-span-1">
+        <p class="font-[Georgia,serif] text-2xl text-[#E9D9BA]">RUNAQ</p>
+        <p class="mt-3 max-w-[220px] text-xs leading-relaxed text-[#BBA98A]">
+          Gold and diamond jewelry made for the moments you keep.
+        </p>
+      </div>
 
-</section>
+      <div>
+        <p class="mb-3 text-sm font-semibold text-[#E9D9BA]">Shop</p>
+        <ul class="space-y-2 text-xs text-[#BBA98A]">
+          <li><a routerLink="/products" class="transition-colors duration-200 hover:text-[#C9A15B]">Necklaces</a></li>
+          <li><a routerLink="/products" class="transition-colors duration-200 hover:text-[#C9A15B]">Earrings</a></li>
+          <li><a routerLink="/products" class="transition-colors duration-200 hover:text-[#C9A15B]">Rings</a></li>
+          <li><a routerLink="/products" class="transition-colors duration-200 hover:text-[#C9A15B]">Bracelets</a></li>
+          <li><a routerLink="/products" class="transition-colors duration-200 hover:text-[#C9A15B]">Sale</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="mb-3 text-sm font-semibold text-[#E9D9BA]">Help</p>
+        <ul class="space-y-2 text-xs text-[#BBA98A]">
+          <li><a class="transition-colors duration-200 hover:text-[#C9A15B]">Delivery</a></li>
+          <li><a class="transition-colors duration-200 hover:text-[#C9A15B]">Exchanges</a></li>
+          <li><a class="transition-colors duration-200 hover:text-[#C9A15B]">Size guide</a></li>
+          <li><a class="transition-colors duration-200 hover:text-[#C9A15B]">Contact us</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="mb-3 text-sm font-semibold text-[#E9D9BA]">Follow</p>
+        <ul class="space-y-2 text-xs text-[#BBA98A]">
+          <li><a class="transition-colors duration-200 hover:text-[#C9A15B]">Instagram</a></li>
+          <li><a class="transition-colors duration-200 hover:text-[#C9A15B]">Pinterest</a></li>
+          <li><a class="transition-colors duration-200 hover:text-[#C9A15B]">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mx-auto mt-10 max-w-7xl border-t border-[#C9A15B]/20 pt-6">
+      <div class="flex flex-col items-center justify-between gap-3 text-xs text-[#BBA98A] sm:flex-row">
+        <p>&copy; 2025 RUNAQ Fine Jewelry</p>
+        <p>
+          <a class="hover:text-[#C9A15B]">Privacy policy</a>
+          <span class="mx-2">/</span>
+          <a class="hover:text-[#C9A15B]">Terms of sale</a>
+        </p>
+      </div>
+      <p dir="rtl" class="mt-6 text-center font-[Georgia,serif] text-6xl text-[#C9A15B]/10 sm:text-7xl">
+        رونق
+      </p>
+    </div>
+  </footer>
+</main>

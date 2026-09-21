@@ -44,11 +44,11 @@
                             {{ product.description }}
                         </p>
                         <p class="mt-4 text-xl font-semibold text-mocha">
-                            EGP {{ product.price }}
+                            EGP {{ product.price | number:'1.2-2' }}
                         </p>
     
                         <p class="mt-2 text-50 font-semibold text-mocha-soft">
-                            Total: EGP {{ product.price * product.quantity }}
+                            Total: EGP {{ product.price * product.quantity | number:'1.2-2' }}
                         </p>
     
                         <div class="mt-5 flex items-center justify-between">

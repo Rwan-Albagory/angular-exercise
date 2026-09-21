@@ -3,12 +3,13 @@ import { ProductsService } from '../../core/core/services/products.service';
 import { ProductWithQuantity} from '../../core/core/models/product.model';
 import { CartService } from '../../core/core/services/cart.service';
 import { RouterLink } from '@angular/router';
+import { DecimalPipe } from '@angular/common';
 
 @Component({
   standalone: true,
   selector: 'app-product-card',
   templateUrl: 'products.html',
-  imports: [RouterLink],
+  imports: [RouterLink, DecimalPipe],
 })
 export class Products implements OnInit { 
 
