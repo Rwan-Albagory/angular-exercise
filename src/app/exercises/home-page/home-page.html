@@ -186,8 +186,8 @@
         />
       </div>
 
-      <div class="w-full text-center lg:w-1/2 lg:text-left">
-        <h2 dir="rtl" class="font-[Georgia,serif] text-3xl leading-tight text-black-chocolate sm:text-4xl lg:ml-62">
+      <div class="w-full text-center lg:w-full lg:text-left">
+        <h2 dir="rtl" class="font-[Georgia,serif] text-3xl leading-tight text-black-chocolate sm:text-4xl lg:ml-34 xl:ml-60 w-full">
           لكل قطعة حكاية،<br />
           ولكل حكاية بريق
         </h2>
@@ -215,7 +215,7 @@
       </div>
 
       <form
-        class="flex w-full max-w-md flex-col gap-3 rounded-full border border-aztec-gold/30 bg-bighorn-sheep/40 p-1.5 sm:flex-row px-5"
+        class="flex w-full max-w-md flex-col gap-2 md:gap-3 rounded-full border border-aztec-gold/30 bg-bighorn-sheep/40 p-4 sm:flex-row px-5"
         (ngSubmit)="subscribe()"
       >
         <input
@@ -224,11 +224,11 @@
           [ngModel]="email()"
           (ngModelChange)="email.set($event)"
           placeholder="Your email address"
-          class="w-full rounded-full bg-transparent  py-2.5 text-sm text-putty placeholder:text-tan focus:outline-none"
+          class="w-[80%] m-auto rounded-full bg-transparent  py-2.5 text-sm text-putty placeholder:text-tan focus:outline-none"
         />
         <button
           type="submit"
-          class="shrink-0 rounded-full bg-aztec-gold px-6 py-2.5 text-sm font-semibold text-bighorn-sheep transition-colors duration-200 hover:bg-golden-ochre "
+          class="shrink-0 w-[80%] m-auto rounded-full bg-aztec-gold px-6 py-2.5 text-sm font-semibold text-bighorn-sheep transition-colors duration-200 hover:bg-golden-ochre "
         >
           Subscribe
         </button>
@@ -284,9 +284,6 @@
           <a class="hover:text-aztec-gold">Terms of sale</a>
         </p>
       </div>
-      <p dir="rtl" class="mt-6 text-center font-[Georgia,serif] text-6xl text-aztec-gold/10 sm:text-7xl">
-        رونق
-      </p>
     </div>
   </footer>
 </main>
