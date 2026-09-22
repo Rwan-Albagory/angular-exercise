@@ -19,6 +19,17 @@
   --color-light-brown: #c89a5b;
   --color-floral-white: #f9f6f0;
   --color-reliable-white: #e8ded3;
+  --color-bighorn-sheep: #1B100C;
+  --color-putty: #E9D9BA;
+  --color-tan: #BBA98A;
+  --color-aztec-gold: #C9A15B;
+  --color-golden-ochre: #D0A85C;
+  --color-black-chocolate: #241711;
+  --color-burnt-coffee: #241711cb;
+  --color-avocado-dark-green: #3D4322;
+  --color-well-read: #5B2022;
+  --color-sunlit-parchment: #E8D5A3;
+
   --font-display: 'Cormorant Garamond', ui-serif, Georgia, serif;
   --font-arabic: 'Amiri', ui-serif, Georgia, serif;
 }

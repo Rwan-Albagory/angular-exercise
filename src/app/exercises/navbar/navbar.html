@@ -1,12 +1,12 @@
 <nav
-  class="fixed top-0 left-0 z-50 w-full bg-[#1B100C]"
+  class="fixed top-0 left-0 z-50 w-full bg-bighorn-sheep"
   [class.md:bg-fluffy-white]="isHome && !menuOpen()"
 >
-  <div class="mx-auto flex max-w-8xl items-center justify-between px-4 py-3 md:px-[80px] md:py-[14px] bg-[#1B100C] border-2">
+  <div class="mx-auto flex max-w-8xl items-center justify-between px-4 py-3 md:px-20 md:py-3.5 bg-bighorn-sheep border-2">
 
     <button
       type="button"
-      class="flex h-11 w-11 items-center justify-center rounded-lg text-raisin-black transition-colors duration-200 hover:cursor-pointer hover:text-gold md:hidden"
+      class="flex h-11 w-11 items-center justify-center rounded-lg text-putty transition-colors duration-200 hover:cursor-pointer hover:text-gold md:hidden"
       [attr.aria-expanded]="menuOpen()"
       aria-controls="mobile-nav"
       aria-label="Toggle navigation menu"
@@ -28,7 +28,7 @@
           <a 
           routerLink="/"
           class="hover:cursor-pointer">
-            <p class=" text-[32px] text-[#E9D9BA]">
+            <p class=" text-[32px] text-putty">
               RUNAQ
             </p>
             <p class="text-[9px] text-smoked-caramel text-center">FINE JEWELRY</p>
@@ -38,7 +38,7 @@
         routerLink="/"
         routerLinkActive="!text-smoked-caramel !border-smoked-caramel pb-0 font-semibold"
         [routerLinkActiveOptions]="{ exact: true }"
-        class="border-b-2 border-transparent pb-0 font-medium text-[#E9D9BA] no-underline
+        class="border-b-2 border-transparent pb-0 font-medium text-putty no-underline
                 transition-colors duration-200
                 hover:text-smoked-caramel hover:border-smoked-caramel"
       >
@@ -48,7 +48,7 @@
       <a
         routerLink="/products"
         routerLinkActive="!text-smoked-caramel !border-smoked-caramel font-semibold"
-        class="border-b-2 border-transparent pb-0.5 font-medium text-[#E9D9BA] no-underline
+        class="border-b-2 border-transparent pb-0.5 font-medium text-putty no-underline
                 transition-colors duration-200
                 hover:text-smoked-caramel hover:border-smoked-caramel"
       >
@@ -56,9 +56,19 @@
       </a>
 
       <a
+        routerLink="/our-story"
+        routerLinkActive="!text-smoked-caramel !border-smoked-caramel font-semibold"
+        class="border-b-2 border-transparent pb-0.5 font-medium text-putty no-underline
+                transition-colors duration-200
+                hover:text-smoked-caramel hover:border-smoked-caramel"
+      >
+        Our story
+      </a>
+
+      <a
         routerLink="/signup"
         routerLinkActive="!text-smoked-caramel !border-smoked-caramel font-semibold"
-        class="border-b-2 border-transparent pb-0.5 font-medium text-[#E9D9BA] no-underline
+        class="border-b-2 border-transparent pb-0.5 font-medium text-putty no-underline
                 transition-colors duration-200
                 hover:text-smoked-caramel hover:border-smoked-caramel"
       >
@@ -71,7 +81,7 @@
       <a
       routerLink="/"
       class="hover:cursor-pointer">
-        <p class="md:hidden text-[22px]">
+        <p class="md:hidden text-[22px] text-putty">
           RUNAQ
         </p>
         <p class="md:hidden text-[10px] text-smoked-caramel text-center">FINE JEWELRY</p>
@@ -83,7 +93,7 @@
       (click)="toggleCart()">
       
       <div class="relative flex h-11 w-11 items-center justify-center " role="img" aria-label="Shopping cart">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor" class="h-7 w-7 text-[#E9D9BA]" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor" class="h-7 w-7 text-putty" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6.75a3.75 3.75 0 1 0-7.5 0v3.75M3.75 8.25h16.5l-1.2 10.2a1.5 1.5 0 0 1-1.49 1.3H6.44a1.5 1.5 0 0 1-1.49-1.3L3.75 8.25Z" />
         </svg>
         @if (cartService.cartCount() >0) {
@@ -98,7 +108,7 @@
                     w-80
                     rounded-2xl
                     border border-sand
-                    bg-cream
+                    bg-putty
                     p-4
                     shadow-2xl
                     shadow-mocha/20">
@@ -257,31 +267,31 @@
       <div class="flex flex-col ">
         <a
           routerLink="/"
-          routerLinkActive="!text-[#E8D5A3] font-semibold"
+          routerLinkActive="!text-sunlit-parchment font-semibold"
           [routerLinkActiveOptions]="{ exact: true }"
           class="flex min-h-11 items-center border-b border-white/10 font-medium text-white/80 no-underline
                   transition-colors duration-200
-                  hover:text-[#C4A46A]"
+                  hover:text-gold"
         >
           Home
         </a>
 
         <a
           routerLink="/products"
-          routerLinkActive="!text-[#E8D5A3] font-semibold"
+          routerLinkActive="!text-sunlit-parchment font-semibold"
           class="flex min-h-11 items-center border-b border-white/10 font-medium text-white/80 no-underline
                   transition-colors duration-200
-                  hover:text-[#C4A46A]"
+                  hover:text-gold"
         >
           Products
         </a>
 
         <a
           routerLink="/signup"
-          routerLinkActive="!text-[#E8D5A3] font-semibold"
+          routerLinkActive="!text-sunlit-parchment font-semibold"
           class="flex min-h-11 items-center font-medium text-white/80 no-underline
                   transition-colors duration-200
-                  hover:text-[#C4A46A]"
+                  hover:text-gold"
         >
           Sign Up
         </a>
