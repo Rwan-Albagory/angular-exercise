@@ -1,0 +1,824 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "slug": "necklaces",
+      "en": "Necklaces",
+      "ar": "قلائد",
+      "icon": "necklace",
+      "bg": "#4A3B2A"
+    },
+    {
+      "id": 2,
+      "slug": "earrings",
+      "en": "Earrings",
+      "ar": "أقراط",
+      "icon": "earring",
+      "bg": "#5B2022"
+    },
+    {
+      "id": 3,
+      "slug": "rings",
+      "en": "Rings",
+      "ar": "خواتم",
+      "icon": "ring",
+      "bg": "#3D4322"
+    },
+    {
+      "id": 4,
+      "slug": "bracelets",
+      "en": "Bracelets",
+      "ar": "أساور",
+      "icon": "bracelet",
+      "bg": "#3A2E28"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "title": "Layla Layered Chain",
+      "description": "18K gold layered chain necklace, three adjustable lengths.",
+      "price": 11340,
+      "discountPercentage": 10,
+      "rating": 4.5,
+      "stock": 8,
+      "brand": "RUNAQ",
+      "category": "necklaces",
+      "material": "gold",
+      "thumbnail": "/images/products/necklace-gold.jpg",
+      "images": [
+        "/images/products/necklace-gold.jpg"
+      ],
+      "tags": [
+        "necklace",
+        "gold",
+        "layered"
+      ],
+      "sku": "RNQ-NEC-001",
+      "weight": 12,
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Beautiful piece, exactly as pictured.",
+          "date": "2026-01-15T10:00:00.000Z",
+          "reviewerName": "Mona Adel",
+          "reviewerEmail": "mona.adel@example.com"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Qamar Pendant Necklace",
+      "description": "Sterling silver crescent pendant on a fine chain.",
+      "price": 3200,
+      "discountPercentage": 0,
+      "rating": 4.5,
+      "stock": 15,
+      "brand": "RUNAQ",
+      "category": "necklaces",
+      "material": "silver",
+      "thumbnail": "/images/products/necklace-silver.jpg",
+      "images": [
+        "/images/products/necklace-silver.jpg"
+      ],
+      "tags": [
+        "necklace",
+        "silver",
+        "pendant"
+      ],
+      "sku": "RNQ-NEC-002",
+      "weight": 12,
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "reviews": []
+    },
+    {
+      "id": 3,
+      "title": "Zahra Choker",
+      "description": "18K gold choker with delicate floral engraving.",
+      "price": 8900,
+      "discountPercentage": 15,
+      "rating": 4.5,
+      "stock": 5,
+      "brand": "RUNAQ",
+      "category": "necklaces",
+      "material": "gold",
+      "thumbnail": "/images/products/necklace-gold.jpg",
+      "images": [
+        "/images/products/necklace-gold.jpg"
+      ],
+      "tags": [
+        "necklace",
+        "gold",
+        "choker"
+      ],
+      "sku": "RNQ-NEC-003",
+      "weight": 12,
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "reviews": []
+    },
+    {
+      "id": 4,
+      "title": "Nujoom Star Necklace",
+      "description": "Sterling silver necklace with scattered star charms.",
+      "price": 2750,
+      "discountPercentage": 0,
+      "rating": 4.5,
+      "stock": 20,
+      "brand": "RUNAQ",
+      "category": "necklaces",
+      "material": "silver",
+      "thumbnail": "/images/products/necklace-silver.jpg",
+      "images": [
+        "/images/products/necklace-silver.jpg"
+      ],
+      "tags": [
+        "necklace",
+        "silver",
+        "star"
+      ],
+      "sku": "RNQ-NEC-004",
+      "weight": 12,
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "reviews": []
+    },
+    {
+      "id": 5,
+      "title": "Marwa Beaded Necklace",
+      "description": "18K gold beaded necklace, hand strung.",
+      "price": 9600,
+      "discountPercentage": 0,
+      "rating": 4.5,
+      "stock": 6,
+      "brand": "RUNAQ",
+      "category": "necklaces",
+      "material": "gold",
+      "thumbnail": "/images/products/necklace-gold.jpg",
+      "images": [
+        "/images/products/necklace-gold.jpg"
+      ],
+      "tags": [
+        "necklace",
+        "gold",
+        "beaded"
+      ],
+      "sku": "RNQ-NEC-005",
+      "weight": 12,
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "reviews": []
+    },
+    {
+      "id": 6,
+      "title": "Sadaf Pearl Necklace",
+      "description": "Freshwater pearls on a sterling silver chain.",
+      "price": 4100,
+      "discountPercentage": 5,
+      "rating": 4.5,
+      "stock": 10,
+      "brand": "RUNAQ",
+      "category": "necklaces",
+      "material": "silver",
+      "thumbnail": "/images/products/necklace-silver.jpg",
+      "images": [
+        "/images/products/necklace-silver.jpg"
+      ],
+      "tags": [
+        "necklace",
+        "silver",
+        "pearl"
+      ],
+      "sku": "RNQ-NEC-006",
+      "weight": 12,
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "reviews": []
+    },
+    {
+      "id": 7,
+      "title": "Nour Drop Earrings",
+      "description": "18K gold drop earrings, 0.6 ct diamonds.",
+      "price": 12400,
+      "discountPercentage": 50,
+      "rating": 4.5,
+      "stock": 4,
+      "brand": "RUNAQ",
+      "category": "earrings",
+      "material": "gold",
+      "thumbnail": "/images/products/earring-gold.jpg",
+      "images": [
+        "/images/products/earring-gold.jpg"
+      ],
+      "tags": [
+        "earring",
+        "gold",
+        "diamond"
+      ],
+      "sku": "RNQ-EAR-007",
+      "weight": 12,
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Beautiful piece, exactly as pictured.",
+          "date": "2026-01-15T10:00:00.000Z",
+          "reviewerName": "Mona Adel",
+          "reviewerEmail": "mona.adel@example.com"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Hala Hoop Earrings",
+      "description": "Sterling silver classic hoop earrings, medium size.",
+      "price": 1800,
+      "discountPercentage": 0,
+      "rating": 4.5,
+      "stock": 25,
+      "brand": "RUNAQ",
+      "category": "earrings",
+      "material": "silver",
+      "thumbnail": "/images/products/earring-silver.jpg",
+      "images": [
+        "/images/products/earring-silver.jpg"
+      ],
+      "tags": [
+        "earring",
+        "silver",
+        "hoop"
+      ],
+      "sku": "RNQ-EAR-008",
+      "weight": 12,
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "reviews": []
+    },
+    {
+      "id": 9,
+      "title": "Rimas Stud Earrings",
+      "description": "18K gold minimalist stud earrings.",
+      "price": 5200,
+      "discountPercentage": 0,
+      "rating": 4.5,
+      "stock": 12,
+      "brand": "RUNAQ",
+      "category": "earrings",
+      "material": "gold",
+      "thumbnail": "/images/products/earring-gold.jpg",
+      "images": [
+        "/images/products/earring-gold.jpg"
+      ],
+      "tags": [
+        "earring",
+        "gold",
+        "stud"
+      ],
+      "sku": "RNQ-EAR-009",
+      "weight": 12,
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "reviews": []
+    },
+    {
+      "id": 10,
+      "title": "Salma Chandelier Earrings",
+      "description": "Sterling silver chandelier earrings with cubic zirconia.",
+      "price": 2950,
+      "discountPercentage": 10,
+      "rating": 4.5,
+      "stock": 9,
+      "brand": "RUNAQ",
+      "category": "earrings",
+      "material": "silver",
+      "thumbnail": "/images/products/earring-silver.jpg",
+      "images": [
+        "/images/products/earring-silver.jpg"
+      ],
+      "tags": [
+        "earring",
+        "silver",
+        "chandelier"
+      ],
+      "sku": "RNQ-EAR-010",
+      "weight": 12,
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "reviews": []
+    },
+    {
+      "id": 11,
+      "title": "Warda Flower Earrings",
+      "description": "18K gold flower-shaped earrings.",
+      "price": 6700,
+      "discountPercentage": 0,
+      "rating": 4.5,
+      "stock": 7,
+      "brand": "RUNAQ",
+      "category": "earrings",
+      "material": "gold",
+      "thumbnail": "/images/products/earring-gold.jpg",
+      "images": [
+        "/images/products/earring-gold.jpg"
+      ],
+      "tags": [
+        "earring",
+        "gold",
+        "flower"
+      ],
+      "sku": "RNQ-EAR-011",
+      "weight": 12,
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "reviews": []
+    },
+    {
+      "id": 12,
+      "title": "Dana Threader Earrings",
+      "description": "Sterling silver threader earrings, lightweight design.",
+      "price": 1550,
+      "discountPercentage": 0,
+      "rating": 4.5,
+      "stock": 18,
+      "brand": "RUNAQ",
+      "category": "earrings",
+      "material": "silver",
+      "thumbnail": "/images/products/earring-silver.jpg",
+      "images": [
+        "/images/products/earring-silver.jpg"
+      ],
+      "tags": [
+        "earring",
+        "silver",
+        "threader"
+      ],
+      "sku": "RNQ-EAR-012",
+      "weight": 12,
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "reviews": []
+    },
+    {
+      "id": 13,
+      "title": "Shams Solitaire Ring",
+      "description": "18K gold solitaire ring, 1.0 ct diamond.",
+      "price": 25200,
+      "discountPercentage": 40,
+      "rating": 4.5,
+      "stock": 3,
+      "brand": "RUNAQ",
+      "category": "rings",
+      "material": "gold",
+      "thumbnail": "/images/products/ring-gold.jpg",
+      "images": [
+        "/images/products/ring-gold.jpg"
+      ],
+      "tags": [
+        "ring",
+        "gold",
+        "diamond"
+      ],
+      "sku": "RNQ-RIN-013",
+      "weight": 12,
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Beautiful piece, exactly as pictured.",
+          "date": "2026-01-15T10:00:00.000Z",
+          "reviewerName": "Mona Adel",
+          "reviewerEmail": "mona.adel@example.com"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Layan Band Ring",
+      "description": "Sterling silver minimalist band ring.",
+      "price": 1450,
+      "discountPercentage": 0,
+      "rating": 4.5,
+      "stock": 22,
+      "brand": "RUNAQ",
+      "category": "rings",
+      "material": "silver",
+      "thumbnail": "/images/products/ring-silver.jpg",
+      "images": [
+        "/images/products/ring-silver.jpg"
+      ],
+      "tags": [
+        "ring",
+        "silver",
+        "band"
+      ],
+      "sku": "RNQ-RIN-014",
+      "weight": 12,
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "reviews": []
+    },
+    {
+      "id": 15,
+      "title": "Farida Halo Ring",
+      "description": "18K gold halo ring with cluster diamonds.",
+      "price": 18900,
+      "discountPercentage": 0,
+      "rating": 4.5,
+      "stock": 4,
+      "brand": "RUNAQ",
+      "category": "rings",
+      "material": "gold",
+      "thumbnail": "/images/products/ring-gold.jpg",
+      "images": [
+        "/images/products/ring-gold.jpg"
+      ],
+      "tags": [
+        "ring",
+        "gold",
+        "halo"
+      ],
+      "sku": "RNQ-RIN-015",
+      "weight": 12,
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "reviews": []
+    },
+    {
+      "id": 16,
+      "title": "Amani Stackable Ring Set",
+      "description": "Set of 3 sterling silver stackable rings.",
+      "price": 2100,
+      "discountPercentage": 0,
+      "rating": 4.5,
+      "stock": 14,
+      "brand": "RUNAQ",
+      "category": "rings",
+      "material": "silver",
+      "thumbnail": "/images/products/ring-silver.jpg",
+      "images": [
+        "/images/products/ring-silver.jpg"
+      ],
+      "tags": [
+        "ring",
+        "silver",
+        "stackable"
+      ],
+      "sku": "RNQ-RIN-016",
+      "weight": 12,
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "reviews": []
+    },
+    {
+      "id": 17,
+      "title": "Yasmin Signet Ring",
+      "description": "18K gold signet ring with engraved initial.",
+      "price": 9800,
+      "discountPercentage": 0,
+      "rating": 4.5,
+      "stock": 6,
+      "brand": "RUNAQ",
+      "category": "rings",
+      "material": "gold",
+      "thumbnail": "/images/products/ring-gold.jpg",
+      "images": [
+        "/images/products/ring-gold.jpg"
+      ],
+      "tags": [
+        "ring",
+        "gold",
+        "signet"
+      ],
+      "sku": "RNQ-RIN-017",
+      "weight": 12,
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "reviews": []
+    },
+    {
+      "id": 18,
+      "title": "Rania Twist Ring",
+      "description": "Sterling silver twisted band ring.",
+      "price": 1700,
+      "discountPercentage": 5,
+      "rating": 4.5,
+      "stock": 16,
+      "brand": "RUNAQ",
+      "category": "rings",
+      "material": "silver",
+      "thumbnail": "/images/products/ring-silver.jpg",
+      "images": [
+        "/images/products/ring-silver.jpg"
+      ],
+      "tags": [
+        "ring",
+        "silver",
+        "twist"
+      ],
+      "sku": "RNQ-RIN-018",
+      "weight": 12,
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "reviews": []
+    },
+    {
+      "id": 19,
+      "title": "Hilal Cuff Bracelet",
+      "description": "18K gold hand-polished cuff bracelet.",
+      "price": 9900,
+      "discountPercentage": 40,
+      "rating": 4.5,
+      "stock": 5,
+      "brand": "RUNAQ",
+      "category": "bracelets",
+      "material": "gold",
+      "thumbnail": "/images/products/bracelet-gold.jpg",
+      "images": [
+        "/images/products/bracelet-gold.jpg"
+      ],
+      "tags": [
+        "bracelet",
+        "gold",
+        "cuff"
+      ],
+      "sku": "RNQ-BRA-019",
+      "weight": 12,
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "reviews": [
+        {
+          "rating": 5,
+          "comment": "Beautiful piece, exactly as pictured.",
+          "date": "2026-01-15T10:00:00.000Z",
+          "reviewerName": "Mona Adel",
+          "reviewerEmail": "mona.adel@example.com"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "title": "Fidda Chain Bracelet",
+      "description": "Sterling silver fine chain bracelet, adjustable clasp.",
+      "price": 1950,
+      "discountPercentage": 0,
+      "rating": 4.5,
+      "stock": 20,
+      "brand": "RUNAQ",
+      "category": "bracelets",
+      "material": "silver",
+      "thumbnail": "/images/products/bracelet-silver.jpg",
+      "images": [
+        "/images/products/bracelet-silver.jpg"
+      ],
+      "tags": [
+        "bracelet",
+        "silver",
+        "chain"
+      ],
+      "sku": "RNQ-BRA-020",
+      "weight": 12,
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "reviews": []
+    },
+    {
+      "id": 21,
+      "title": "Noor Silver Bangle",
+      "description": "Solid sterling silver bangle with brushed finish.",
+      "price": 2400,
+      "discountPercentage": 0,
+      "rating": 4.5,
+      "stock": 17,
+      "brand": "RUNAQ",
+      "category": "bracelets",
+      "material": "silver",
+      "thumbnail": "/images/products/bracelet-silver.jpg",
+      "images": [
+        "/images/products/bracelet-silver.jpg"
+      ],
+      "tags": [
+        "bracelet",
+        "silver",
+        "bangle"
+      ],
+      "sku": "RNQ-BRA-021",
+      "weight": 12,
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "reviews": []
+    },
+    {
+      "id": 22,
+      "title": "Amira Charm Bracelet",
+      "description": "Sterling silver charm bracelet with five charms.",
+      "price": 2650,
+      "discountPercentage": 10,
+      "rating": 4.5,
+      "stock": 11,
+      "brand": "RUNAQ",
+      "category": "bracelets",
+      "material": "silver",
+      "thumbnail": "/images/products/bracelet-silver.jpg",
+      "images": [
+        "/images/products/bracelet-silver.jpg"
+      ],
+      "tags": [
+        "bracelet",
+        "silver",
+        "charm"
+      ],
+      "sku": "RNQ-BRA-022",
+      "weight": 12,
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "reviews": []
+    },
+    {
+      "id": 23,
+      "title": "Lulu Tennis Bracelet",
+      "description": "18K gold tennis bracelet with cubic zirconia stones.",
+      "price": 15600,
+      "discountPercentage": 0,
+      "rating": 4.5,
+      "stock": 3,
+      "brand": "RUNAQ",
+      "category": "bracelets",
+      "material": "gold",
+      "thumbnail": "/images/products/bracelet-gold.jpg",
+      "images": [
+        "/images/products/bracelet-gold.jpg"
+      ],
+      "tags": [
+        "bracelet",
+        "gold",
+        "tennis"
+      ],
+      "sku": "RNQ-BRA-023",
+      "weight": 12,
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "reviews": []
+    },
+    {
+      "id": 24,
+      "title": "Samar Beaded Silver Bracelet",
+      "description": "Sterling silver beaded bracelet, everyday wear.",
+      "price": 1350,
+      "discountPercentage": 0,
+      "rating": 4.5,
+      "stock": 24,
+      "brand": "RUNAQ",
+      "category": "bracelets",
+      "material": "silver",
+      "thumbnail": "/images/products/bracelet-silver.jpg",
+      "images": [
+        "/images/products/bracelet-silver.jpg"
+      ],
+      "tags": [
+        "bracelet",
+        "silver",
+        "beaded"
+      ],
+      "sku": "RNQ-BRA-024",
+      "weight": 12,
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "reviews": []
+    },
+    {
+      "id": 25,
+      "title": "Jana Woven Bracelet",
+      "description": "Sterling silver woven mesh bracelet.",
+      "price": 1900,
+      "discountPercentage": 0,
+      "rating": 4.5,
+      "stock": 13,
+      "brand": "RUNAQ",
+      "category": "bracelets",
+      "material": "silver",
+      "thumbnail": "/images/products/bracelet-silver.jpg",
+      "images": [
+        "/images/products/bracelet-silver.jpg"
+      ],
+      "tags": [
+        "bracelet",
+        "silver",
+        "woven"
+      ],
+      "sku": "RNQ-BRA-025",
+      "weight": 12,
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "reviews": []
+    },
+    {
+      "id": 26,
+      "title": "Rawan Infinity Bracelet",
+      "description": "18K gold infinity symbol bracelet.",
+      "price": 7200,
+      "discountPercentage": 0,
+      "rating": 4.5,
+      "stock": 8,
+      "brand": "RUNAQ",
+      "category": "bracelets",
+      "material": "gold",
+      "thumbnail": "/images/products/bracelet-gold.jpg",
+      "images": [
+        "/images/products/bracelet-gold.jpg"
+      ],
+      "tags": [
+        "bracelet",
+        "gold",
+        "infinity"
+      ],
+      "sku": "RNQ-BRA-026",
+      "weight": 12,
+      "warrantyInformation": "1 year warranty",
+      "shippingInformation": "Ships in 2-3 business days",
+      "availabilityStatus": "In Stock",
+      "returnPolicy": "30 days return policy",
+      "minimumOrderQuantity": 1,
+      "reviews": []
+    }
+  ]
+}
