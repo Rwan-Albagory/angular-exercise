@@ -61,48 +61,54 @@
         <h2 class="font-[Georgia,serif] text-3xl text-putty sm:text-4xl">Shop by piece</h2>
         <span dir="rtl" class="hidden text-lg text-aztec-gold sm:block">تسوّقي حسب القطعة</span>
       </div>
-      <div class="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
-        @for (category of categories; track category.en) {
-          <div
-            class="flex h-64 flex-col items-center justify-end gap-2 rounded-t-full rounded-b-2xl border border-aztec-gold/25 px-4 pb-6 pt-16 text-center sm:h-80 lg:h-100 lg:w-70"
-            [style.background-color]="category.bg"
-          >
-            <span class="text-aztec-gold">
-              @switch (category.icon) {
-                @case ('necklace') {
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" class="h-20 w-20">
-                    <path d="M4 4c0 5 3.5 9 8 9s8-4 8-9" stroke-linecap="round" />
-                    <circle cx="12" cy="16" r="2.2" />
-                  </svg>
+
+      @if (loading()) {
+        <p class="py-10 text-center text-lg text-putty">
+          Loading categories...
+        </p>
+      }
+
+      @if (error()) {
+        <p class="py-10 text-center text-lg text-red-700">
+          {{error()}}
+        </p>
+      }
+      @if (!loading() && !error()){
+
+        <div class="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4 ">
+          @for (category of categories(); track category.id) {
+            <div
+              class="flex h-64 flex-col items-center justify-end gap-2 rounded-t-full rounded-b-2xl border border-aztec-gold/25 px-4 pb-6 pt-16 text-center sm:h-80 lg:h-100 lg:w-70 hover:cursor-pointer hover:shadow-[0_6px_20px_#C9A15B]/20 transition-shadow duration-400"
+              [style.background-color]="category.bg"
+            >
+              <span class="text-aztec-gold ">
+                @switch (category.icon) {
+                  @case ('necklace') {
+                   <img src="/images/icons/necklace.png" class="lg:mb-8">
+                  }
+                  @case ('earring') {
+                    <img src="/images/icons/earring.png" class="lg:mb-8">
+                  }
+                  @case ('ring') {
+                    <img src="/images/icons/ring.png" class="lg:mb-8">
+                  }
+                  @case ('bracelet') {
+                    <img src="/images/icons/bracelet.png" class="lg:mb-8">
+                  }
                 }
-                @case ('earring') {
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="h-20 w-20">
-                    <circle cx="12" cy="6" r="2" />
-                    <path d="M12 8v3a4 4 0 0 0 4 4" stroke-linecap="round" />
-                    <circle cx="16" cy="17" r="2" />
-                  </svg>
-                }
-                @case ('ring') {
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="h-20 w-20">
-                    <circle cx="12" cy="14" r="6" />
-                    <path d="m9 8 3-4 3 4-3 3-3-3Z" />
-                  </svg>
-                }
-                @case ('bracelet') {
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="h-20 w-20">
-                    <ellipse cx="12" cy="12" rx="8" ry="5" />
-                  </svg>
-                }
-              }
-            </span>
-            <span dir="rtl" class="mt-2 text-lg text-putty">{{ category.ar }}</span>
-            <span class="text-sm text-putty">{{ category.en }}</span>
-            <span class="text-xs text-tan">{{ category.count }} pieces</span>
-          </div>
-        }
-      </div>
+              </span>
+              <span dir="rtl" class="mt-2 text-lg text-putty">{{ category.ar }}</span>
+              <span class="text-sm text-putty">{{ category.en }}</span>
+              <span class="text-xs text-tan">{{ category.count }} pieces</span>
+            </div>
+          }
+        </div>
+      }
+
+
     </div>
   </section>
+  
   <section class="bg-well-read px-6 py-16 md:px-12 lg:px-20">
     <div class="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
 
@@ -132,28 +138,18 @@
                 <span class="text-aztec-gold">
                   @switch (product.icon) {
                     @case ('necklace') {
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="h-6 w-6">
-                        <path d="M4 4c0 5 3.5 9 8 9s8-4 8-9" stroke-linecap="round" />
-                        <circle cx="12" cy="16" r="2.2" />
-                      </svg>
+                      <img src="/images/icons/necklace.png" class="h-10 w-10">
                     }
                     @case ('earring') {
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="h-6 w-6">
-                        <circle cx="12" cy="6" r="2" />
-                        <path d="M12 8v3a4 4 0 0 0 4 4" stroke-linecap="round" />
-                        <circle cx="16" cy="17" r="2" />
-                      </svg>
+                      <img src="/images/icons/earring.png"class="h-10 w-10">
+
                     }
                     @case ('ring') {
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="h-6 w-6">
-                        <circle cx="12" cy="14" r="6" />
-                        <path d="m9 8 3-4 3 4-3 3-3-3Z" />
-                      </svg>
+                      <img src="/images/icons/ring.png"class="h-10 w-10">
+
                     }
                     @case ('bracelet') {
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" class="h-6 w-6">
-                        <ellipse cx="12" cy="12" rx="8" ry="5" />
-                      </svg>
+                      <img src="/images/icons/bracelet.png"class="h-10 w-10">
                     }
                   }
                 </span>
