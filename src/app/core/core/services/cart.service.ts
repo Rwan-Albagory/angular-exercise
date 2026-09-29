@@ -39,20 +39,20 @@ if (existingProduct) {
 }
 
 
-getQuantity(productId: number): number {
+getQuantity(productId: string): number {
 
 const product = this.cartItems().find(
     (item) => item.id === productId
 );
 return product?.quantity ?? 0;
 }
-removeFromCart(productId: number): void {
+removeFromCart(productId: string): void {
 
 this.cartItems.update((items) =>
     items.filter((item) => item.id !== productId)
 );
 }
-updateQuantity(productId: number, quantity: number): void {
+updateQuantity(productId: string, quantity: number): void {
     this.cartItems.update((items) =>
       items.map((item) =>
         item.id === productId

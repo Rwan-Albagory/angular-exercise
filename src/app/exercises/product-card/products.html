@@ -1,7 +1,7 @@
 <div class="min-h-screen bg-cream p-6 pt-24 md:px-20">
 
-    <h1 class="mb-6 text-3xl font-bold text-mocha">
-        PRODUCTS
+    <h1 class="mb-6 mt-6 text-3xl font-bold text-mocha">
+        {{pageTitle()}}
     </h1>
 
     @if (loading()) {
@@ -18,9 +18,9 @@
 
     @if (!loading() && !error()) {
 
-        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 ">
 
-        @for (product of products(); track product.id) {
+        @for (product of filteredProducts(); track product.id) {
 
             <a
             [routerLink]="['/products', product.id]"

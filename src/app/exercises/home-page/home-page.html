@@ -77,10 +77,11 @@
 
         <div class="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4 ">
           @for (category of categories(); track category.id) {
-            <div
+            <a
+              [routerLink]="['/products' ,category.slug] "
               class="flex h-64 flex-col items-center justify-end gap-2 rounded-t-full rounded-b-2xl border border-aztec-gold/25 px-4 pb-6 pt-16 text-center sm:h-80 lg:h-100 lg:w-70 hover:cursor-pointer hover:shadow-[0_6px_20px_#C9A15B]/20 transition-shadow duration-400"
               [style.background-color]="category.bg"
-            >
+             >
               <span class="text-aztec-gold ">
                 @switch (category.icon) {
                   @case ('necklace') {
@@ -100,7 +101,7 @@
               <span dir="rtl" class="mt-2 text-lg text-putty">{{ category.ar }}</span>
               <span class="text-sm text-putty">{{ category.en }}</span>
               <span class="text-xs text-tan">{{ category.count }} pieces</span>
-            </div>
+            </a>
           }
         </div>
       }

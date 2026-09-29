@@ -52,13 +52,13 @@ export class ProductDetails implements OnInit, OnDestroy {
   currentReview = computed(() => this.reviews()[this.currentReviewIndex()] ?? null);
 
   ngOnInit(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = String(this.route.snapshot.paramMap.get('id'));
 
     this.productsService.getProductById(id).subscribe({
       next: (product) => {
         this.product.set(product);
         this.selectedImage.set(product.thumbnail || product.images?.[0] || '');
-        this.quantity.set(this.cartService.getQuantity(product.id) || 1);
+        this.quantity.set(this.cartService.getQuantity(product.id ) || 1);
         this.currentReviewIndex.set(0);
         this.playReviewEnter();
         this.startAutoPlay();

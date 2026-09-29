@@ -1,8 +1,8 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, computed, inject, OnInit, signal } from '@angular/core';
 import { ProductsService } from '../../core/core/services/products.service';
 import { ProductWithQuantity} from '../../core/core/models/product.model';
 import { CartService } from '../../core/core/services/cart.service';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { DecimalPipe } from '@angular/common';
 
 @Component({
@@ -11,6 +11,9 @@ import { DecimalPipe } from '@angular/common';
   templateUrl: 'products.html',
   imports: [RouterLink, DecimalPipe],
 })
+
+
+
 export class Products implements OnInit { 
 
   private productsService = inject(ProductsService);
@@ -23,12 +26,14 @@ export class Products implements OnInit {
     this.cartService.addToCart(product);
   }
 
+  private route = inject (ActivatedRoute);
+  categorySlug = signal<string | null>(null);
+
   ngOnInit(): void {
     this.productsService.getProducts().subscribe({
       next: (response) => {
         this.products.set(
-          //loop through the products and add the quantity from the cart service to each product
-          response.products.map((product) => ({
+          response.map((product) => ({
             ...product,
             quantity: this.cartService.getQuantity(product.id),
           }))
@@ -41,7 +46,31 @@ export class Products implements OnInit {
         this.loading.set(false);
       }
     });
+
+    this.route.paramMap.subscribe(params =>{
+      this.categorySlug.set(params.get('category'));
+    });
+
   }
+
+  filteredProducts = computed(() => {
+    const category = this.categorySlug();
+    const allProducts = this.products();
+
+    if (!category) {
+      return allProducts
+    }
+    return allProducts.filter(
+      product => product.category === category
+    );
+
+  });
+
+  pageTitle = computed(() => {
+    const category = this.categorySlug();
+    return category ? category.toUpperCase() : 'PRODUCTS';
+  });
+
 
 
   increase(product: ProductWithQuantity): void {
